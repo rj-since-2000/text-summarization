@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Summarizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Text Summarizer</h1>
+    <p>Get a summary of your text with just one click!</p>
+  </header>
+  <main>
+    <form action = "{{url_for('get_summary')}}" method="post">
+      <label for="text">Enter your text:</label>
+      <textarea id="text" name="input_text" placeholder="Type or paste your text here..." aria-required="required" required></textarea>
+      <div class="button-container">
+        <button type="submit">Summarize</button>
+        <button type="reset">Clear Text</button>
+      </div>
+    </form>
+    <div id="summary" name="result">{{result}}</div>
+  </main>
+  <footer>
+    <p>Created by - Rajan Jaiswal & Sameera Tanzeen</p>
+    <p>EEE NITK, 2023</p>
+  </footer>
+</body>
+</html>
